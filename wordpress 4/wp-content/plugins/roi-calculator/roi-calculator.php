@@ -20,3 +20,11 @@ if (! defined('ABSPATH') ){
 /* define variable for path to the file to find assets such as scripts or styles easier */
 define('ROI_CALC_LOCATION', dirname( __FILE__ ) );
 define('ROI_CALC_LOCATION_URL', plugins_url('', __FILE__ ) );
+
+/*Function to register form widget with wordpress*/
+function roi_calc_register_form_widget(){
+	/*register the new widget called roi calc form widget*/
+	register_widget('ROI_CALC_FORM_WIDGET');
+}
+/*the function is hooked into the widget in its action*/
+add_action(wp_widgets_init(), 'roi_calc_register_form_widget');
