@@ -7129,7 +7129,7 @@ var plugin_document_setting_panel = __webpack_require__(173);
  * If you wish to display the sidebar, you can with use the `PluginSidebarMoreMenuItem` component or the `wp.data.dispatch` API:
  *
  * ```js
- * wp.data.dispatch( 'core/edit-post' ).openGeneralSidebar( 'plugin-name/sidebar-name' );
+ * wp.data.dispatch( 'core/edit-post' ).openGeneralSidebar( 'dvs-roi-calculator/sidebar-name' );
  * ```
  *
  * @see PluginSidebarMoreMenuItem

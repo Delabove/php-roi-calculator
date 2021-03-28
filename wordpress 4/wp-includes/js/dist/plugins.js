@@ -439,7 +439,7 @@ var api_plugins = {};
  * 		)
  * 	);
  * }
- * registerPlugin( 'plugin-name', {
+ * registerPlugin( 'dvs-roi-calculator', {
  * 	icon: moreIcon,
  * 	render: Component,
  * } );
@@ -469,7 +469,7 @@ var api_plugins = {};
  * 	</>
  * );
  *
- * registerPlugin( 'plugin-name', {
+ * registerPlugin( 'dvs-roi-calculator', {
  * 	icon: more,
  * 	render: Component,
  * } );
@@ -523,7 +523,7 @@ function registerPlugin(name, settings) {
  * // Using ES5 syntax
  * var unregisterPlugin = wp.plugins.unregisterPlugin;
  *
- * unregisterPlugin( 'plugin-name' );
+ * unregisterPlugin( 'dvs-roi-calculator' );
  * ```
  *
  * @example
@@ -532,7 +532,7 @@ function registerPlugin(name, settings) {
  * // Using ESNext syntax
  * import { unregisterPlugin } from '@wordpress/plugins';
  *
- * unregisterPlugin( 'plugin-name' );
+ * unregisterPlugin( 'dvs-roi-calculator' );
  * ```
  *
  * @return {?WPPlugin} The previous plugin settings object, if it has been
