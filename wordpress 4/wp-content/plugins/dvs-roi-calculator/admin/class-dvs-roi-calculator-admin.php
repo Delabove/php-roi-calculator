@@ -101,4 +101,26 @@ class Dvs_Roi_Calculator_Admin {
 
 	}
 
+	/**
+	 * Add top level custom menu
+	 *
+	 * @since    1.0.0
+	 */
+
+	function my_admin_menu(){
+
+		add_menu_page('New Plugin Settings', 'ROI Calc Settings', 'manage_options', 'dvs-roi-calculator/mainsettings.php', array($this, 'my_admin_page'), 'dashicons-chart-pie', 1 );
+		add_submenu_page('dvs-roi-calculator/mainsettings.php', 'Submenu', 'Calculator Submissions', 'edit_posts', 'dvs-roi-calculator/submenu-page.php', array($this, 'my_admin_sub_page'), null );
+
+	}
+
+	public function my_admin_page(){
+		//return view
+		require_once 'partials/dvs-roi-calculator-admin-display.php';
+	}
+
+	public function my_admin_sub_page(){
+		require_once 'partials/submenu-page.php';
+	}
+
 }
