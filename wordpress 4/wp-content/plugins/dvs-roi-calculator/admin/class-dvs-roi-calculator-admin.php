@@ -74,7 +74,9 @@ class Dvs_Roi_Calculator_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->dvs_roi_calculator, plugin_dir_url( __FILE__ ) . 'css/dvs-roi-calculator-admin.css', array(), $this->version, 'all' );
+	wp_enqueue_style( $this->dvs_roi_calculator, plugin_dir_url( _FILE_ ) . 'css/style.css', array(), $this->version, 'all' );
+//   wp_enqueue_style( 'bootstrap-css', plugin_dir_url( _FILE_ ) . 'css/bootstrap.min.css', array(), $this->version, 'all' );
+
 
 	}
 
@@ -97,7 +99,9 @@ class Dvs_Roi_Calculator_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->dvs_roi_calculator, plugin_dir_url( __FILE__ ) . 'js/dvs-roi-calculator-admin.js', array( 'jquery' ), $this->version, false );
+wp_enqueue_script( $this->dvs_roi_calculator, plugin_dir_url( _FILE_ ) . 'js/dvs-roi-calculator-admin.js', array( 'jquery' ), $this->version, false );
+//wp_enqueue_script( 'bootstrap-js', plugin_dir_url( _FILE_ ) . 'js/bootstrap.min.js', array( 'jquery' ), $this->version, false );
+//		wp_enqueue_script( 'bootstrap', plugin_dir_url( __FILE__ ). 'admin/js/bootstrap.min.js', array('jquery'), NULL, true );
 
 	}
 
@@ -121,6 +125,20 @@ class Dvs_Roi_Calculator_Admin {
 
 	public function my_admin_sub_page(){
 		require_once 'partials/submenu-page.php';
+	}
+
+	/**
+	 * Add top level custom menu
+	 *
+	 * @since    1.0.0
+	 */
+
+	public function register_calculator_settings(){
+		register_setting('calculator_form_settings', 'email');
+		register_setting('calculator_form_settings', 'thenumbers');
+		register_setting('calculator_form_settings', 'multiselect');
+
+
 	}
 
 }

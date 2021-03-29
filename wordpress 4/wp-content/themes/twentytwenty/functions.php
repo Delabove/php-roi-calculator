@@ -750,11 +750,22 @@ function twentytwenty_get_elements_array() {
 	);
 
 	/**
-	* Filters Twenty Twenty theme elements
-	*
-	* @since Twenty Twenty 1.0
-	*
-	* @param array Array of elements
-	*/
+	 * Filters Twenty Twenty theme elements
+	 *
+	 * @since Twenty Twenty 1.0
+	 *
+	 * @param array Array of elements
+	 */
 	return apply_filters( 'twentytwenty_get_elements_array', $elements );
 }
+
+add_action('wp_enqueue_scripts', 'twentytwenty_wp_enqueue_scripts');
+
+function twentytwenty_wp_enqueue_scripts(){
+    wp_enqueue_script('bootstrap-jquery', 'https://code.jquery.com/jquery-3.5.1.slim.min.js', array(), '1.0.0', 'true');
+    wp_enqueue_script('bootstrap-bundle', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js', array('bootstrap-jquery'), '1.0.0', 'true');
+
+    wp_enqueue_style('bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css', '', '1.0.0', 'all');
+}
+
+

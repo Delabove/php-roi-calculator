@@ -25,4 +25,40 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-Hello World!
+<form method="post" action="options.php">
+    <?php
+    settings_fields('calculator_form_settings');
+    do_settings_sections('calculator_form_settings');
+    ?>
+    <div class="form-group">
+        <label for="exampleFormControlInput1">Email address</label>
+        <input type="email" name="email" form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect1">Example select</label>f
+        <select class="form-control" name="thenumbers" id="exampleFormControlSelect1">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlSelect2">Example multiple select</label>
+        <select multiple class="form-control" name="multiselect" id="exampleFormControlSelect2">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary mb-2">Save Settings</button>
+
+</form>

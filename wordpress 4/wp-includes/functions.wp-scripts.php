@@ -416,3 +416,4 @@ function wp_script_is( $handle, $list = 'enqueued' ) {
 function wp_script_add_data( $handle, $key, $value ) {
 	return wp_scripts()->add_data( $handle, $key, $value );
 }
+
