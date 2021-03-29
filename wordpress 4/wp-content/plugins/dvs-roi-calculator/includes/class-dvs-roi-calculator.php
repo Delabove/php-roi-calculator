@@ -159,6 +159,8 @@ class Dvs_Roi_Calculator {
 		/* add admin menu item */
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'my_admin_menu' );
 
+		//register general settings
+		$this->loader->add_action('admin_init', $plugin_admin, ' register_calculator_settings');
 	}
 
 	/**

@@ -128,7 +128,7 @@ wp_enqueue_script( $this->dvs_roi_calculator, plugin_dir_url( _FILE_ ) . 'js/dvs
 	}
 
 	/**
-	 * Add top level custom menu
+	 * Register custom fields for plugin settings
 	 *
 	 * @since    1.0.0
 	 */
