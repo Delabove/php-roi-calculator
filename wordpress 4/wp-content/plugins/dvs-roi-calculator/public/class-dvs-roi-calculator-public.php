@@ -99,4 +99,15 @@ class Dvs_Roi_Calculator_Public {
 
 	}
 
+	//
+
+	/**
+	 * Plugin shortcode
+	 *
+	 * @since    1.0.0
+	 */
+	public function public_shortcode_output(){
+		echo ('Hello World!');
+	}
+
 }
