@@ -6,11 +6,10 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @link              http://localhost:63342/php-wordpress/wordpress%204/
+ * @since             1.0.0
+ * @package           dvs_roi_calculator
+ * @subpackage dvs-roi-calculator/includes
  */
 
 /**
@@ -23,11 +22,11 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    Dvs_Roi_Calculator
+ * @subpackage Dvs_Roi_Calculator/includes
+ * @author     DeLayne LaBove <delayne@wearetribu.com>
  */
-class Plugin_Name {
+class Dvs_Roi_Calculator {
 
 	/**
 	 * The loader that's responsible for maintaining and registering all hooks that power
@@ -35,7 +34,7 @@ class Plugin_Name {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      Plugin_Name_Loader    $loader    Maintains and registers all hooks for the plugin.
+	 * @var      Dvs_Roi_Calculator_Loader  $loader    Maintains and registers all hooks for the plugin.
 	 */
 	protected $loader;
 
@@ -44,9 +43,9 @@ class Plugin_Name {
 	 *
 	 * @since    1.0.0
 	 * @access   protected
-	 * @var      string    $plugin_name    The string used to uniquely identify this plugin.
+	 * @var      string    $dvs_roi_calculator    The string used to uniquely identify this plugin.
 	 */
-	protected $plugin_name;
+	protected string $dvs_roi_calculator ;
 
 	/**
 	 * The current version of the plugin.
@@ -55,7 +54,7 @@ class Plugin_Name {
 	 * @access   protected
 	 * @var      string    $version    The current version of the plugin.
 	 */
-	protected $version;
+	protected string $version;
 
 	/**
 	 * Define the core functionality of the plugin.
@@ -67,12 +66,12 @@ class Plugin_Name {
 	 * @since    1.0.0
 	 */
 	public function __construct() {
-		if ( defined( 'PLUGIN_NAME_VERSION' ) ) {
-			$this->version = PLUGIN_NAME_VERSION;
+		if ( defined( 'DVS_ROI_CALCULATOR_VERSION' ) ) {
+			$this->version = DVS_ROI_CALCULATOR_VERSION;
 		} else {
 			$this->version = '1.0.0';
 		}
-		$this->plugin_name = 'dvs-roi-calculator';
+		$this->dvs_roi_calculator = 'dvs-roi-calculator';
 
 		$this->load_dependencies();
 		$this->set_locale();
@@ -86,10 +85,10 @@ class Plugin_Name {
 	 *
 	 * Include the following files that make up the plugin:
 	 *
-	 * - Plugin_Name_Loader. Orchestrates the hooks of the plugin.
-	 * - Plugin_Name_i18n. Defines internationalization functionality.
-	 * - Plugin_Name_Admin. Defines all hooks for the admin area.
-	 * - Plugin_Name_Public. Defines all hooks for the public side of the site.
+	 * - class-dvs-roi-calculator-loader. Orchestrates the hooks of the plugin.
+	 * - class-dvs-roi-calculator-i18n.php_i18n. Defines internationalization functionality.
+	 * - class-dvs-roi-calculator. Defines all hooks for the admin area.
+	 * - class-dvs-roi-calculator-public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks
 	 * with WordPress.
@@ -122,7 +121,7 @@ class Plugin_Name {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-dvs-roi-calculator-public.php';
 
-		$this->loader = new Plugin_Name_Loader();
+		$this->loader = new Dvs_Roi_Calculator_Loader();
 
 	}
 
@@ -137,7 +136,7 @@ class Plugin_Name {
 	 */
 	private function set_locale() {
 
-		$plugin_i18n = new Plugin_Name_i18n();
+		$plugin_i18n = new Dvs_Roi_Calculator_i18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
 
@@ -152,7 +151,7 @@ class Plugin_Name {
 	 */
 	private function define_admin_hooks() {
 
-		$plugin_admin = new Plugin_Name_Admin( $this->get_plugin_name(), $this->get_version() );
+		$plugin_admin = new Dvs_Roi_Calculator_Admin( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
@@ -168,7 +167,7 @@ class Plugin_Name {
 	 */
 	private function define_public_hooks() {
 
-		$plugin_public = new Plugin_Name_Public( $this->get_plugin_name(), $this->get_version() );
+		$plugin_public = new Dvs_Roi_Calculator_Public( $this->get_plugin_name(), $this->get_version() );
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
@@ -192,14 +191,14 @@ class Plugin_Name {
 	 * @return    string    The name of the plugin.
 	 */
 	public function get_plugin_name() {
-		return $this->plugin_name;
+		return $this->dvs_roi_calculator;
 	}
 
 	/**
 	 * The reference to the class that orchestrates the hooks with the plugin.
 	 *
 	 * @since     1.0.0
-	 * @return    Plugin_Name_Loader    Orchestrates the hooks of the plugin.
+	 * @return    Dvs_Roi_Calculator_Loader    Orchestrates the hooks of the plugin.
 	 */
 	public function get_loader() {
 		return $this->loader;

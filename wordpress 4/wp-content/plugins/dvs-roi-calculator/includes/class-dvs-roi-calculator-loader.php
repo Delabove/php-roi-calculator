@@ -3,11 +3,10 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @link              http://localhost:63342/php-wordpress/wordpress%204/
+ * @since             1.0.0
+ * @package           Dvs_Roi_Calculator
+ * @subpackage Dvs_Roi_Calculator/includes
  */
 
 /**
@@ -17,11 +16,12 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @since      1.0.0
+ * @package    Dvs_Roi_Calculator
+ * @subpackage Dvs_Roi_Calculator/includes
+ * @author     DeLayne LaBove <delayne@wearetribu.com>
  */
-class Plugin_Name_Loader {
+class Dvs_Roi_Calculator_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.
@@ -30,7 +30,7 @@ class Plugin_Name_Loader {
 	 * @access   protected
 	 * @var      array    $actions    The actions registered with WordPress to fire when the plugin loads.
 	 */
-	protected $actions;
+	protected array $actions;
 
 	/**
 	 * The array of filters registered with WordPress.
@@ -39,7 +39,7 @@ class Plugin_Name_Loader {
 	 * @access   protected
 	 * @var      array    $filters    The filters registered with WordPress to fire when the plugin loads.
 	 */
-	protected $filters;
+	protected array $filters;
 
 	/**
 	 * Initialize the collections used to maintain the actions and filters.

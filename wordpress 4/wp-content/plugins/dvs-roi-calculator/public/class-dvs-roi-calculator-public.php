@@ -1,35 +1,34 @@
 <?php
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
+ * @link              http://localhost:63342/php-wordpress/wordpress%204/
+ * @since             1.0.0
+ * @package           Dvs_Roi_Calculator
+ * @subpackage Dvs_Roi_Calculator/public
  */
 
 /**
- * The admin-specific functionality of the plugin.
+ * The public-facing functionality of the plugin.
  *
  * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/admin
- * @author     Your Name <email@example.com>
+ * @package    Dvs_Roi_Calculator
+ * @subpackage Dvs_Roi_Calculator/public
+ * @author     DeLayne LaBove <delayne@wearetribu.com>
  */
-class Plugin_Name_Admin {
+class Dvs_Roi_Calculator_Public {
 
 	/**
 	 * The ID of this plugin.
 	 *
 	 * @since    1.0.0
 	 * @access   private
-	 * @var      string    $plugin_name    The ID of this plugin.
+	 * @var      string    $dvs_roi_calculator     The ID of this plugin.
 	 */
-	private $plugin_name;
+	private string $dvs_roi_calculator ;
 
 	/**
 	 * The version of this plugin.
@@ -38,24 +37,24 @@ class Plugin_Name_Admin {
 	 * @access   private
 	 * @var      string    $version    The current version of this plugin.
 	 */
-	private $version;
+	private string $version;
 
 	/**
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
+	 * @param      string    $dvs_roi_calculator        The name of the plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct(string $dvs_roi_calculator , string $version ) {
 
-		$this->plugin_name = $plugin_name;
+		$this->dvs_roi_calculator  = $dvs_roi_calculator ;
 		$this->version = $version;
 
 	}
 
 	/**
-	 * Register the stylesheets for the admin area.
+	 * Register the stylesheets for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -73,12 +72,12 @@ class Plugin_Name_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/dvs-roi-calculator-admin.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->dvs_roi_calculator, plugin_dir_url( __FILE__ ) . 'css/dvs-roi-calculator-public.css', array(), $this->version, 'all' );
 
 	}
 
 	/**
-	 * Register the JavaScript for the admin area.
+	 * Register the JavaScript for the public-facing side of the site.
 	 *
 	 * @since    1.0.0
 	 */
@@ -96,7 +95,7 @@ class Plugin_Name_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/dvs-roi-calculator-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->dvs_roi_calculator, plugin_dir_url( __FILE__ ) . 'js/dvs-roi-calculator-public.js', array( 'jquery' ), $this->version, false );
 
 	}
 

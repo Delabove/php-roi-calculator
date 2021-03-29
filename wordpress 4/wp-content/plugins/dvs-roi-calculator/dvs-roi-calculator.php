@@ -10,11 +10,11 @@
  *
  * @link              http://localhost:63342/php-wordpress/wordpress%204/
  * @since             1.0.0
- * @package           ROI Calculator
+ * @package           dvs_roi_calculator
  *
  * @wordpress-plugin
- * Plugin Name:       ROI Calculator
- * Plugin URI:        http://localhost:63342/php-wordpress/wordpress%204/dvs-roi-calculator
+ * Plugin Name:       DVS ROI Calculator
+ * Plugin URI:        http://localhost:63342/php-wordpress/wordpress%204/
  * Description:       Calculates users return on investment.
  * Version:           1.0.0
  * Author:            DeLayne LaBove, Tribu
@@ -35,28 +35,28 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PLUGIN_NAME_VERSION', '1.0.0' );
+define( 'DVS_ROI_CALCULATOR_VERSION', '1.0.0' );
 
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-dvs-roi-calculator-activator.php
  */
-function activate_plugin_name() {
+function activate_dvs_roi_calculator() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dvs-roi-calculator-activator.php';
-	Plugin_Name_Activator::activate();
+	Dvs_Roi_Calculator_Activator::activate();
 }
 
 /**
  * The code that runs during plugin deactivation.
  * This action is documented in includes/class-dvs-roi-calculator-deactivator.php
  */
-function deactivate_plugin_name() {
+function deactivate_dvs_roi_calculator() {
 	require_once plugin_dir_path( __FILE__ ) . 'includes/class-dvs-roi-calculator-deactivator.php';
-	Plugin_Name_Deactivator::deactivate();
+	Dvs_Roi_Calculator_Deactivator::deactivate();
 }
 
-register_activation_hook( __FILE__, 'activate_plugin_name' );
-register_deactivation_hook( __FILE__, 'deactivate_plugin_name' );
+register_activation_hook( __FILE__, 'activate_dvs_roi_calculator' );
+register_deactivation_hook( __FILE__, 'deactivate_dvs_roi_calculator' );
 
 /**
  * The core plugin class that is used to define internationalization,
@@ -73,10 +73,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-dvs-roi-calculator.php';
  *
  * @since    1.0.0
  */
-function run_plugin_name() {
+function run_dvs_roi_calculator() {
 
-	$plugin = new Plugin_Name();
+	$plugin = new dvs_roi_calculator();
 	$plugin->run();
 
 }
-run_plugin_name();
+run_dvs_roi_calculator();

@@ -5,11 +5,10 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       http://example.com
- * @since      1.0.0
- *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/public/partials
+ * @link              http://localhost:63342/php-wordpress/wordpress%204/
+ * @since             1.0.0
+ * @package           dvs_roi_calculator
+ * @subpackage Dvs_Roi_Calculator/public/partials
  */
 ?>
 

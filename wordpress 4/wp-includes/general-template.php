@@ -3386,9 +3386,11 @@ function wp_dependencies_unique_hosts() {
 				/* @var _WP_Dependency $dependency */
 				$dependency = $dependencies->registered[ $handle ];
 				$parsed     = wp_parse_url( $dependency->src );
-
+				$server_name = (isset($_SERVER['SERVER_NAME']))? // check if SERVER_NAME is set
+					$_SERVER['SERVER_NAME'] :                    // if yes, use HTTP header value
+					php_uname("n");
 				if ( ! empty( $parsed['host'] )
-					&& ! in_array( $parsed['host'], $unique_hosts, true ) && $parsed['host'] !== $_SERVER['SERVER_NAME']
+					&& ! in_array( $parsed['host'], $unique_hosts, true ) && $parsed['host'] !== $server_name
 				) {
 					$unique_hosts[] = $parsed['host'];
 				}

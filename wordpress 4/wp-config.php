@@ -91,5 +91,5 @@ require_once ABSPATH . 'wp-settings.php';
 
 //define( 'WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST'] . '/Applications/XAMPP/xamppfiles/htdocs/php-wordpress/wordpress 4' );
 
-//define( 'PLUGINDIR', dirname(__FILE__) . '/wordpress 4/wp-content/plugins' );
+//dplugin-name
 //define( 'WP_MEMORY_LIMIT', '1024M' );
