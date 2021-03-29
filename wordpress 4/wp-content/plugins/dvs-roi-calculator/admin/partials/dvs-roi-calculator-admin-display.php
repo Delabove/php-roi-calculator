@@ -32,16 +32,17 @@
     ?>
     <div class="form-group">
         <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" name="useremail" form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" name="useremail" value="<?php echo get_option( 'useremail')?>" " id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
     <div class="form-group">
-        <label for="exampleFormControlSelect1">Example select</label>f
+	    <?php $selectedoption = get_option('numbers'); ?>
+        <label for="exampleFormControlSelect1">Select: </label>
         <select class="form-control" name="numbers" id="exampleFormControlSelect1">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+            <option <?php if( $selectedoption == '1'){echo "selected";} ?> > 1 </option>
+            <option <?php if( $selectedoption == '2'){echo "selected";} ?> >2</option>
+            <option <?php if($selectedoption== '3'){echo "selected";} ?> >3</option>
+            <option <?php if( $selectedoption == '4'){echo "selected";} ?> >4</option>
+            <option <?php if( $selectedoption == '5'){echo "selected";} ?> >5</option>
         </select>
     </div>
     <div class="form-group">
