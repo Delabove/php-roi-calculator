@@ -160,7 +160,7 @@ class Dvs_Roi_Calculator {
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'my_admin_menu' );
 
 		//register general settings
-		$this->loader->add_action('admin_init', $plugin_admin, ' register_calculator_settings');
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'register_calculator_settings' );
 	}
 
 	/**

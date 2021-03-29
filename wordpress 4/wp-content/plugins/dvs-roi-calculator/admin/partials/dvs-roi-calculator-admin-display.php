@@ -27,16 +27,16 @@
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
 <form method="post" action="options.php">
     <?php
-    settings_fields('calculator_form_settings');
-    do_settings_sections('calculator_form_settings');
+    settings_fields('plugin_custom_settings');
+    do_settings_sections('plugin_custom_settings');
     ?>
     <div class="form-group">
         <label for="exampleFormControlInput1">Email address</label>
-        <input type="email" name="email" form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+        <input type="email" name="useremail" form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
     <div class="form-group">
         <label for="exampleFormControlSelect1">Example select</label>f
-        <select class="form-control" name="thenumbers" id="exampleFormControlSelect1">
+        <select class="form-control" name="numbers" id="exampleFormControlSelect1">
             <option>1</option>
             <option>2</option>
             <option>3</option>
