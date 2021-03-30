@@ -179,7 +179,7 @@ class Dvs_Roi_Calculator {
 
 
 		//add shortcode
-		$this ->loader->add_shortcode('dvs-roi-calculator', $plugin_public, 'shortcode_function');
+		$this ->loader->add_shortcode('dvs-roi-calculator', $plugin_public, 'public_shortcode_output');
 	}
 
 	/**

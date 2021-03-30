@@ -52,6 +52,7 @@ class Dvs_Roi_Calculator_Loader {
 		$this->filters = array();
 		$this->shortcodes = array();
 
+
 	}
 
 	/**
