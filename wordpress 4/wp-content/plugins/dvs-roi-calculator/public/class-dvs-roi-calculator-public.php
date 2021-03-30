@@ -121,7 +121,9 @@ class Dvs_Roi_Calculator_Public {
 		//calculate the cost
 
 		echo (
-			'	
+			'
+
+			
 		<form style="display: table;" action="<?php echo get_permalink(); ?>"  method = "post">
 		<table>
 			<tr style="display: table-row-group; border: 0px; !important;">
