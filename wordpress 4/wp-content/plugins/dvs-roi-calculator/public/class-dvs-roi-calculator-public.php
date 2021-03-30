@@ -114,8 +114,11 @@ class Dvs_Roi_Calculator_Public {
 		if (isset($_POST['val3'])) $val3 = $_POST['val3'];
 		if (isset($_POST['val4'])) $val4 = $_POST['val4'];
 		if (isset($_POST['val5'])) $val5 = $_POST['val5'];
+		if (isset($_POST['val6'])) $val5 = $_POST['val6'];
 		$roi_multivar = 12;
 //		$roi_answer = () * $roi_multivar;
+
+		//calculate the cost
 
 		echo (
 			'
@@ -136,11 +139,12 @@ class Dvs_Roi_Calculator_Public {
 			    <td style="display: table-cell;" ><h4>Reduced Risk <br> Savings</h4></td>
 		    </thead>
 		    <tr style="display: table-row-group;">
-			    <td style="display: table-cell;"> <input type = "text" name = "val1" value=""></td> 
-				<td style="display: table-cell;">  <input type = "text" name = "val2"  size = "10" value=""></td>
-				<td style="display: table-cell;">  <input type = "text" name = "val3"  size = "10" value=""></td>
-				<td style="display: table-cell;"> <input type = "text" name = "val4"  size = "10" value=""></td>
-				<td style="display: table-cell;"> <input type = "text" name = "val5"  size = "10" value=""></td>
+			    <td style="display: table-cell;"> <input type = "text" name = "val1" value=""></td> <!--B4-->
+				<td style="display: table-cell;">  <input type = "text" name = "val2"  size = "10" value=""></td> <!--C4-->
+				<td style="display: table-cell;">  <input type = "text" name = "val3"  size = "10" value=""></td><!--D4-->
+				<td style="display: table-cell;"> <input type = "text" name = "val4"  size = "10" value=""></td> <!--E4= B4*C4-->
+				<td style="display: table-cell;"> <input type = "text" name = "val5"  size = "10" value=""></td> <!--F4= B4*D4-->
+				<td style="display: table-cell;"> <input type = "text" name = "val6"  size = "10" value=""></td> <!--G4= E4-F4-->
 			</tr>
 			</table>
 			<br>
